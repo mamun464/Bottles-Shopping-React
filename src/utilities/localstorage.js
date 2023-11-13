@@ -16,4 +16,11 @@ const addToList = (id) => {
     saveToLS(previousList)
 };
 
-export { addToList }
+const removeFromList = (id) => {
+    const previousList = getStoredCart();
+    const newList = previousList.filter(item => item !== id);
+    saveToLS(newList)
+
+};
+
+export { addToList, getStoredCart, removeFromList }
